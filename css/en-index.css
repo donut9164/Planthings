@@ -46,7 +46,6 @@
     text-decoration-color: #757575;
 }
 
-/* search*/
 .box {
     background-color: #a5a5a3;
     padding: 50px;
@@ -88,6 +87,8 @@
 .box p:hover{
     color: #000;
 }
+
+/* responsive */
 
 @media screen and (max-width: 1500px) {
     .col-text-1{

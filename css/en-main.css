@@ -112,7 +112,7 @@ nav .logo {
 /* scroll bar */
 
 ::-webkit-scrollbar {
-    width: 20px;
+    width: 10px;
     background-image: none;
 }
 
@@ -143,74 +143,52 @@ nav .logo {
 
 /* loading screen */
 
-#loading-screen {
-    position: fixed;
-    top: 250px;
+#loading-screen h1{
+    top: 43%;
+    right: 50%;
+    position: absolute;
+    transform: translate(50%, -50%);
+}
+
+.loader {
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    --height-of-loader: 7px;
+    --loader-color: #8AB28E;
+    width: 250px;
+    height: var(--height-of-loader);
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+}
+
+.loader::before {
+    content: "";
+    position: absolute;
+    background: var(--loader-color);
+    top: 0;
     left: 0;
-    width: 100%;
+    width: 0%;
     height: 100%;
-    background-color: #fff;
-    z-index: 9999;
-    display: none;
+    border-radius: 30px;
+    animation: moving 1s ease-in-out infinite;
+    ;
 }
 
-.text-loading {
-    text-align: center;
-}
+@keyframes moving {
+    50% {
+        width: 100%;
+    }
 
-.loading-dot-container {
-    margin-top: 60px;
-    display: flex;
-    justify-content: center;
-}
-
-.loading-dot {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #000;
-    margin: 0 15px;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: bounce 1.4s infinite ease-in-out;
-}
-
-.loading-dot:nth-child(1) {
-    animation-delay: 0.2s;
-}
-
-.loading-dot:nth-child(2) {
-    animation-delay: 0.4s;
-}
-
-.loading-dot:nth-child(3) {
-    animation-delay: 0.6s;
-}
-
-.loading-dot:nth-child(4) {
-    animation-delay: 0.8s;
-}
-
-.loading-dot:nth-child(5) {
-    animation-delay: 1s;
-}
-
-@keyframes bounce {
-
-    0%,
-    20%,
-    40%,
-    60%,
     100% {
-        transform: scale(0);
-    }
-
-    80% {
-        transform: scale(1);
+        width: 0;
+        right: 0;
+        left: unset;
     }
 }
+
+/* responsive */
 
 @media screen and (max-width: 770px) {
     .sidenav {
