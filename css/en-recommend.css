@@ -10,13 +10,14 @@
     width: 95%;
     max-width: auto;
     height: 500px;
-    background-color: #38b6ff;
+    background: #9AA4B0;
     color: #fff;
     margin: 100px auto;
     border-radius: 20px;
     padding: 40px 30px;
     text-align: center;
     margin-top: -10px;
+    
 }
 
 .search {
