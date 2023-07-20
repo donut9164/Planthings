@@ -1,6 +1,6 @@
 # PlanThings 🪴
 
-Welcome to PlanThings! PlanThings is a website that helps you find suitable plants for your location and provides guidance on how to grow them. In order to make it work, you need to replace the `*your-api-key*` placeholder with your own OpenWeatherMap API key. Follow the instructions below to get started.
+Welcome to PlanThings! PlanThings is a website that helps you find suitable plants for your location and provides guidance on how to grow them. 
 
 ## Getting Started
 

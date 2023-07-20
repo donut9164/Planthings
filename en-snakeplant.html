@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/en-snakeplant.css">
+    <link rel="stylesheet" href="css/en-main.css">
+    <script src="js/app-main.js"></script>
+    <title>Planthings</title>
+</head>
+
+<body>
+    <div id="loading-screen">
+        <h1>Planthings</h1>
+        <div class="loader"></div>
+    </div>
+
+    <div class="page">
+        <!--logo-->
+        <nav>
+            <a style="text-decoration: none;" href="en-index.html">
+                <div class="logo">PlanThings</div>
+
+        </nav>
+
+        <!--side navigation bar-->
+
+        <div id="Sidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+            <a href="en-index.html" class="textmenu" target="_blank">Home</a>
+            <a href="en-recommend.html" class="textmenu" target="_blank">Recommend Plants</a>
+            <a href="#" class="textmenu" target="_blank">View All Plants</a>
+            <a href="#" class="textmenu" target="_blank">Contact</a>
+        </div>
+
+
+        <!--navigation bar-->
+        <div id="main">
+            <span class="sidebutton" onclick="openNav()">&#9776;</span>
+        </div>
+    </div>
+
+    <!-- col-1 -->
+    <div class="box"><canvas id="canvas" width="500" height="400"
+            style="position: absolute;right: 0;margin-top: 40px;"></canvas>
+        <h1>Snakeplant</h1>
+        <p>Snake plant is a popular and hardy houseplant with stiff, sword-like leaves from six inches to 12 feet tall
+            in its native habitat but usually reaches two feet tall when grown indoors. Snake plants help to filter
+            indoor air.</p>
+    </div>
+
+    <!-- 3d model -->
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.138.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.138.0/examples/js/loaders/GLTFLoader.min.js"></script>
+
+    <script src="js/OrbitControls.js"></script>
+
+    <script>
+        // Function to load the GLTF model
+        function loadGLTFModel(url) {
+            return new Promise((resolve, reject) => {
+                const loader = new THREE.GLTFLoader();
+                loader.load(
+                    url,
+                    (gltf) => resolve(gltf.scene),
+                    undefined,
+                    reject
+                );
+            });
+        }
+
+        // Main function to set up WebGL and load the model
+        async function init() {
+            const canvas = document.getElementById('canvas');
+            const renderer = new THREE.WebGLRenderer({ canvas });
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(45, canvas.width / canvas.height, 1, 1000);
+
+            camera.position.z = 5;
+
+            // Load the model
+            const modelPath = 'model/1.gltf';
+            const model = await loadGLTFModel(modelPath);
+
+            // Add the model to the scene
+            scene.add(model);
+
+            // Set up lighting
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
+            scene.add(ambientLight);
+
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+            directionalLight.position.set(1, 1, 1);
+            scene.add(directionalLight);
+
+            // Create the orbit controls
+            const controls = new THREE.OrbitControls(camera, canvas);
+
+            // Optional settings for orbit controls
+            controls.enableDamping = true; // Smoother camera movement
+            controls.dampingFactor = 0.05;
+            controls.rotateSpeed = 0.1; // Adjust the rotation speed (lower value for slower, higher for faster)
+            controls.zoomSpeed = 3.0;   // Adjust the zoom speed (lower value for slower, higher for faster)
+
+
+            // Function to render the scene
+            function render() {
+                renderer.render(scene, camera);
+                renderer.setClearColor(0x9aa4b0);
+            }
+
+            // Function to animate the scene (you can also use requestAnimationFrame)
+            function animate() {
+                requestAnimationFrame(animate);
+
+                // Update the orbit controls in the animation loop
+                controls.update();
+
+                // Render the scene
+                render();
+            }
+
+
+
+            // Start the animation loop
+            animate();
+        }
+
+        // Initialize the scene
+        init();
+    </script>
+</body>
