@@ -34,9 +34,8 @@
             <a href="en-index.html" class="textmenu" target="_blank">Home</a>
             <a href="en-recommend.html" class="textmenu" target="_blank">Recommend Plants</a>
             <a href="#" class="textmenu" target="_blank">View All Plants</a>
-            <a href="#" class="textmenu" target="_blank">Contact</a>
+            <a href="en-contect.html" class="textmenu" target="_blank">Contact</a>
         </div>
-
 
         <!--navigation bar-->
         <div id="main">
@@ -53,10 +52,63 @@
             indoor air.</p>
     </div>
 
+    <!-- col-2 -->
+    <div class="col-2">
+        <h1>Things to use</h1>
+        <p>- Potted plant material <br>
+            - Fertilizer for potted plants</p>
+    </div>
+
+    <!-- col-3 -->
+    <div class="col-3">
+        <h1>Fertilizer</h1>
+        <p>Use the 20-20-20 formula.</p>
+    </div>
+
+    <!-- col-4 -->
+    <div class="col-4">
+        <h1>Growth period</h1>
+        <p>The mandarin will grow quickly or slowly depending on the environment in which it is grown. But most of them
+            will take about 2-3 years to grow.</p>
+    </div>
+
+    <!-- col-5 -->
+    <div class="col-5">
+        <h1>Planting and care process</h1>
+
+        <h2>1.Planting</h2>
+        <h4>Planting in pots</h4>
+        <p>
+            - Use potted planting material. Don't use regular potting soil. <br>
+            - Only transplant the pot when the roots have penetrated the pot</p>
+
+        <h2>2. Placement</h2>
+        <h4>Place the pot so that the lilac plants get enough light.</h4>
+        <p>
+            - By placing on the edge of the front, but if placed south The pot has to be moved about 30 cm away from the
+            window. Do not let it be exposed to full sun all day long. <br>
+            - If the house is quite dark Find a bright fluorescent tube or other light bulbs to shine </p>
+
+        <h2>3. Watering</h2>
+        <p>- Use your hands to see if the soil is dry or not. then water Especially during the summer <br>
+            - If the leaves begin to droop and the soil dries, water quickly. <br>
+            - Watered with room temperature water. <br>
+            - If watering with rainwater or distilled water is even better. But if using tap water Must be left for about
+            48 hours or more. to reduce chlorine or fluoride and other residues</p>
+
+        <h2>4. Fertilizing</h2>
+        <p>- Fertilize Lymangkorn only once at the beginning of the year. by using a fertilizer specifically for potted
+            and mix according to the instructions on the label.</p>
+
+        <h2>5. Care</h2>
+        <p>- If there is dust Wipe the leaves with a damp cloth. <br>
+            - Move the pot when it gets too big. It's easy to notice that the roots will go through the pot through the
+            drainage holes. or sometimes push until the pot breaks (terracotta pot)</p>
+
+    </div>
+
+
     <!-- 3d model -->
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/three@0.138.0/build/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.138.0/examples/js/loaders/GLTFLoader.min.js"></script>
 
@@ -86,7 +138,7 @@
             camera.position.z = 5;
 
             // Load the model
-            const modelPath = 'model/1.gltf';
+            const modelPath = 'model/2.gltf';
             const model = await loadGLTFModel(modelPath);
 
             // Add the model to the scene
@@ -107,7 +159,7 @@
             controls.enableDamping = true; // Smoother camera movement
             controls.dampingFactor = 0.05;
             controls.rotateSpeed = 0.1; // Adjust the rotation speed (lower value for slower, higher for faster)
-            controls.zoomSpeed = 3.0;   // Adjust the zoom speed (lower value for slower, higher for faster)
+            controls.zoomSpeed = 1.0;   // Adjust the zoom speed (lower value for slower, higher for faster)
 
 
             // Function to render the scene
@@ -126,9 +178,6 @@
                 // Render the scene
                 render();
             }
-
-
-
             // Start the animation loop
             animate();
         }
