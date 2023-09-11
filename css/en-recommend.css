@@ -141,13 +141,13 @@
     transition: 0.3s;
 }
 
-.box img{
+.box img {
     position: absolute;
     margin-top: 80px;
     max-width: 80px;
 }
 
-.box h1{
+.box h1 {
     color: #3B692B;
     position: absolute;
     max-width: 50px;
@@ -155,8 +155,9 @@
     margin-top: 20px;
 }
 
-.box:hover{
+.box:hover {
     height: 220px;
     width: 220px;
-    box-shadow: 2px 2px 8px 4px #8bab8d;
+    box-shadow: 2px 2px 8px 4px #b6dcb8;
 }
+

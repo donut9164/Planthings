@@ -1,13 +1,12 @@
-#canvas{
-    top: 50px;
+#canvas {
     margin-right: 50px;
 }
 
 
-.box{
+.box {
     margin: 10px;
     position: relative;
-    background-color:#9AA4B0;
+    background-color: #9AA4B0;
     width: 95%;
     height: 500px;
     left: 49.25%;
@@ -16,6 +15,7 @@
     border-radius: 25px;
 }
 
+
 .box h1 {
     position: absolute;
     margin: 50px;
@@ -23,81 +23,86 @@
     font-size: 60px;
 }
 
-.box p{
+.box p {
     position: absolute;
     margin: 50px;
     top: 180px;
     max-width: 800px;
     font-size: 25px;
 }
+/* card */
 
-.col-2{
+.card {
+    margin: 10px;
+    position: relative;
+    height: 100px;
+    left: 49.25%;
+    right: 50%;
+    transform: translateX(-50%);
+    border-radius: 25px;
+    width: 95%;
+    background-color: #e9e9e9;
+    padding: 10px;
+    transition: 0.2s;
+}
+
+.card h1{
+    font-size: 30px;
+    position: absolute;
+    margin-top: 25px;
+    margin-left: 50px;
+}
+
+.card img{
+   position: absolute;
+   margin-top: 17px; 
+   transition: 0.3s;
+}
+
+.card p{
+    margin-top: 90px;
+    margin-left: 40px;
+    font-size: 20px;
+    display: none;
+    transition: 0.3s;
+}
+
+.box-header {
+    font-weight: bold;
+    background-color: #e9e9e9;
+}
+
+.box-content {
+    display: none;
+    margin-top: 10px;
+}
+
+.col-2 {
     position: relative;
     margin: 50px;
     line-height: 40px;
 }
 
-.col-2 p{
+.col-2 p {
     margin-top: 10px;
     margin-left: 30px;
 }
 
-/* col-3 */
 
-.col-3{
-    position: relative;
-    margin: 50px;
-    line-height: 40px;
-}
 
-.col-3 p{
-    margin-top: 10px;
-    margin-left: 30px;
-}
-
-/* col-4 */
-
-.col-4{
-    position: relative;
-    margin: 50px;
-    line-height: 40px;
-}
-
-.col-4 p{
-    margin-top: 10px;
-    margin-left: 30px;
-}
-
-/* col-5 */
-
-.col-5{
-    position: relative;
-    margin: 50px;
-    line-height: 40px;
-}
-
-.col-5 h4{
-    margin-left: 30px;
-}
-
-.col-5 p{
-    margin-top: 10px;
-    margin-left: 70px;
-}
-
-@media screen and (max-width: 1400px){
-    #canvas{
-        top: 250px;
+@media screen and (max-width: 1400px) {
+    #canvas {
+        top: 300px;
         left: 50%;
         right: 50%;
         transform: translateX(-50%);
     }
-    
-    
-    .box{
+
+
+    .box {
         margin: 10px;
         position: relative;
-        background-color:#9AA4B0;
+        background-color: #9AA4B0;
         width: 95%;
         height: 750px;
         left: 49.25%;
@@ -105,13 +110,73 @@
         transform: translateX(-50%);
         border-radius: 25px;
     }
+    
+    .box p {
+        position: absolute;
+        margin: 50px;
+        top: 180px;
+        max-width: 1000px;
+        font-size: 25px;
+    }
+    
+    .card p{
+        margin-top: 90px;
+        margin-left: 40px;
+        font-size: 18px;
+        display: none;
+        transition: 0.3s;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    #canvas {
+        width: 400px;
+    }
+}
+
+
+@media screen and (max-width: 1045px) {
+    #canvas {
+        top: 350px;
+        left: 50%;
+        right: 50%;
+        transform: translateX(-50%);
+    }
 }
 
 @media screen and (max-width: 600px) {
-    #canvas{
+    #canvas {
+        width: 200px;
         top: 300px;
         left: 50%;
         right: 50%;
         transform: translateX(-50%);
+    }
+
+    .box {
+        margin: 10px;
+        position: relative;
+        background-color: #9AA4B0;
+        width: 95%;
+        height: 500px;
+        left: 49.25%;
+        right: 50%;
+        transform: translateX(-50%);
+        border-radius: 25px;
+    }
+
+    .box h1 {
+        position: absolute;
+        margin: 50px;
+        margin-top: 70px;
+        font-size: 40px;
+    }
+    
+    .box p {
+        position: absolute;
+        margin: 50px;
+        top: 100px;
+        max-width: 800px;
+        font-size: 15px;
     }
 }

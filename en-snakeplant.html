@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/en-snakeplant.css">
     <link rel="stylesheet" href="css/en-main.css">
     <script src="js/app-main.js"></script>
+    <script src="js/box_animation.js"></script>
     <title>Planthings</title>
 </head>
 
@@ -44,8 +45,7 @@
     </div>
 
     <!-- col-1 -->
-    <div class="box"><canvas id="canvas" width="500" height="400"
-            style="position: absolute;right: 0;margin-top: 40px;"></canvas>
+    <div class="box"><canvas id="canvas" width="500" height="500" style="position: absolute;right: 0;"></canvas>
         <h1>Snakeplant</h1>
         <p>Snake plant is a popular and hardy houseplant with stiff, sword-like leaves from six inches to 12 feet tall
             in its native habitat but usually reaches two feet tall when grown indoors. Snake plants help to filter
@@ -53,58 +53,68 @@
     </div>
 
     <!-- col-2 -->
-    <div class="col-2">
-        <h1>Things to use</h1>
+    <div class="card">
+        <h1>Things to Use</h1>
+        <div id="box" onclick="toggleCardHeight()">
+            <img src="images/icon/arrow.png">
+        </div>
         <p>- Potted plant material <br>
             - Fertilizer for potted plants</p>
     </div>
 
-    <!-- col-3 -->
-    <div class="col-3">
+    <div class="card">
         <h1>Fertilizer</h1>
-        <p>Use the 20-20-20 formula.</p>
+        <div id="box" onclick="toggleCardHeight()">
+            <img src="images/icon/arrow.png">
+        </div>
+        <p>- Use the 20-20-20 formula.</p>
     </div>
 
-    <!-- col-4 -->
-    <div class="col-4">
+    <div class="card">
         <h1>Growth period</h1>
-        <p>The mandarin will grow quickly or slowly depending on the environment in which it is grown. But most of them
-            will take about 2-3 years to grow.</p>
+        <div id="box" onclick="toggleCardHeight()">
+            <img src="images/icon/arrow.png">
+        </div>
+        <p>- The snake plant will start to grow quickly or slowly depending on where it is planted, but in most cases it
+            will take a 2-3 years.</p>
     </div>
 
-    <!-- col-5 -->
-    <div class="col-5">
+    <div class="card">
         <h1>Planting and care process</h1>
-
-        <h2>1.Planting</h2>
-        <h4>Planting in pots</h4>
+        <div id="box" onclick="toggleCardHeight_long()">
+            <img src="images/icon/arrow.png">
+        </div>
         <p>
-            - Use potted planting material. Don't use regular potting soil. <br>
-            - Only transplant the pot when the roots have penetrated the pot</p>
+            1. Planting <br>
+            Planting in pots
+            Use potted planting material. Don't use regular potting soil.
+            Only transplant the pot when the roots have penetrated the pot.
+            <br><br>
+            2. Placement <br>
+            Place the pot so that the lilac plants get enough light.
+            By placing on the edge of the front, but if placed south The pot has to be moved about 30 cm away from the
+            window. Do not let it be exposed to full sun all day long.
+            If the house is quite dark Find a bright fluorescent tube or other light bulbs to shine
+            <br><br>
+            3. Watering <br>
+            Use your hands to see if the soil is dry or not. then water Especially during the summer
+            If the leaves begin to droop and the soil dries, water quickly.
+            Watered with room temperature water.
+            If watering with rainwater or distilled water is even better. But if using tap water Must be left for about
+            48 hours or more. to reduce chlorine or fluoride and other residues
+            <br><br>
+            4. Fertilizing <br>
+            Fertilize Lymangkorn only once at the beginning of the year. by using a fertilizer specifically for potted
+            and mix according to the instructions on the label.
+            <br><br>
+            5. Care <br>
+            If there is dust Wipe the leaves with a damp cloth.
+            Move the pot when it gets too big. It's easy to notice that the roots will go through the pot through the
+            drainage holes. or sometimes push until the pot breaks (terracotta pot)
 
-        <h2>2. Placement</h2>
-        <h4>Place the pot so that the lilac plants get enough light.</h4>
-        <p>
-            - By placing on the edge of the front, but if placed south The pot has to be moved about 30 cm away from the
-            window. Do not let it be exposed to full sun all day long. <br>
-            - If the house is quite dark Find a bright fluorescent tube or other light bulbs to shine </p>
 
-        <h2>3. Watering</h2>
-        <p>- Use your hands to see if the soil is dry or not. then water Especially during the summer <br>
-            - If the leaves begin to droop and the soil dries, water quickly. <br>
-            - Watered with room temperature water. <br>
-            - If watering with rainwater or distilled water is even better. But if using tap water Must be left for about
-            48 hours or more. to reduce chlorine or fluoride and other residues</p>
 
-        <h2>4. Fertilizing</h2>
-        <p>- Fertilize Lymangkorn only once at the beginning of the year. by using a fertilizer specifically for potted
-            and mix according to the instructions on the label.</p>
-
-        <h2>5. Care</h2>
-        <p>- If there is dust Wipe the leaves with a damp cloth. <br>
-            - Move the pot when it gets too big. It's easy to notice that the roots will go through the pot through the
-            drainage holes. or sometimes push until the pot breaks (terracotta pot)</p>
-
+        </p>
     </div>
 
 
@@ -115,6 +125,52 @@
     <script src="js/OrbitControls.js"></script>
 
     <script>
+
+        function toggleCardHeight() {
+            const card = event.currentTarget.closest(".card");
+            const img = card.querySelector("img");
+            const text = card.querySelector("p");
+
+            if (card.style.height === "100px") {
+                card.style.height = "200px";
+                img.style.transform = "rotate(90deg)";
+                text.style.display = "block";
+            } else {
+                card.style.height = "100px";
+                img.style.transform = "rotate(0deg)";
+                text.style.display = "none";
+            }
+        }
+
+        function toggleCardHeight_long() {
+            const card = event.currentTarget.closest(".card");
+            const img = card.querySelector("img");
+            const text = card.querySelector("p");
+
+            var screenWidth = window.innerWidth;
+            if (screenWidth < 1150) {
+                if (card.style.height === "100px") {
+                    card.style.height = "900px";
+                    img.style.transform = "rotate(90deg)";
+                    text.style.display = "block";
+                } else {
+                    card.style.height = "100px";
+                    img.style.transform = "rotate(0deg)";
+                    text.style.display = "none";
+                }
+            } else {
+                if (card.style.height === "100px") {
+                    card.style.height = "650px";
+                    img.style.transform = "rotate(90deg)";
+                    text.style.display = "block";
+                } else {
+                    card.style.height = "100px";
+                    img.style.transform = "rotate(0deg)";
+                    text.style.display = "none";
+                }
+            }
+        }
+
         // Function to load the GLTF model
         function loadGLTFModel(url) {
             return new Promise((resolve, reject) => {
@@ -133,9 +189,10 @@
             const canvas = document.getElementById('canvas');
             const renderer = new THREE.WebGLRenderer({ canvas });
             const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(45, canvas.width / canvas.height, 1, 1000);
+            const camera = new THREE.PerspectiveCamera(45, canvas.width / canvas.height, 0.1, 1000);
 
-            camera.position.z = 5;
+            camera.position.set(0, 1, 5); // Adjust the position as needed
+            camera.lookAt(0, -20, 0); // Set the target point for the camera to look at
 
             // Load the model
             const modelPath = 'model/2.gltf';
