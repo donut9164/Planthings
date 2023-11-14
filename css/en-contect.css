@@ -18,6 +18,11 @@
     width: 300px;
 }
 
+.card h1{
+    text-align: center;
+    margin-top: 25px;
+}
+
 .card:hover {
     
 }
