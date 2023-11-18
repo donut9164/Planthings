@@ -12,7 +12,7 @@
     height: 500px;
     background: #9AA4B0;
     color: #fff;
-    margin: 100px auto;
+    margin: 10px auto; 
     border-radius: 20px;
     padding: 40px 30px;
     text-align: center;
@@ -131,9 +131,9 @@
 }
 
 .box {
-    height: 200px;
-    width: 200px;
-    margin: 20px;
+    height: 210px;
+    width: 210px;
+    margin: 50px;
     border-radius: 20px;
     background: #D9F5DC;
     box-shadow: 2px 2px 8px 4px rgba(0, 0, 0, 0.1);
@@ -156,8 +156,8 @@
 }
 
 .box:hover {
-    height: 220px;
-    width: 220px;
-    box-shadow: 2px 2px 8px 4px #b6dcb8;
+    height: 300px;
+    width: 300px;
+    box-shadow: 2px 2px 8px 4px #eafcf2;
 }
 
