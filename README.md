@@ -25,7 +25,7 @@ To configure the project with your API key, follow these steps:
 
 To use the project, follow these steps:
 
-1. Open your web browser and navigate to [Planthings](Planthings).
+1. Open your web browser and navigate to [Planthings](https://planthings-gardenhub.web.app/).
 2. Enter your location to find suitable plants for your area.
 3. Explore the plant suggestions and learn how to grow them effectively.
 
