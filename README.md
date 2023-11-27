@@ -23,7 +23,7 @@ To configure the project with your API key, follow these steps:
 
 ## Usage
 
-To use the project, follow these steps:
+To use the website, follow these steps:
 
 1. Open your web browser and navigate to [Planthings](https://planthings-gardenhub.web.app/).
 2. Enter your location to find suitable plants for your area.
@@ -31,8 +31,14 @@ To use the project, follow these steps:
 
 ## Contributing
 
-If you would like to contribute to this project, please feel free to submit a pull request. We welcome any improvements or bug fixes.
+This project is a work in progress, and we appreciate your contribution to making it better! If you come across any bugs or have ideas for improvements, please feel free to report them by submitting an issue. We welcome pull requests for bug fixes, new features, or any other enhancements to help us build a more robust project. Thank you for your support!
 
 [contect us](mailto:)
 
 ## License
+
+### MIT License
+
+Copyright (c) 2023 Planthings Team
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software
